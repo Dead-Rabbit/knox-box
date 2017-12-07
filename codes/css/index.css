@@ -1,0 +1,77 @@
+html, body{
+	width: 100%;
+	/*overflow-y: hidden;*/
+}
+
+.knox-logo{
+	font-family:"iconfont";
+	color: white;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale; 
+    padding-left:20px
+}
+.xiao-transition{
+
+    transition-duration: .4s;
+}
+.xiao-top{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0,0,0,0.7) !important;
+}
+#xiao-top a{color:white;}
+.xiao-top-two{
+    background-color: white !important;
+    box-shadow: 0px 1px 3px black ;
+}
+.xiao-top-two a{color:black !important;}
+#right-navigation{
+    left:auto;
+    right: 10px;
+    top:40%;
+    border-radius: 10px 10px 30px 30px !important;
+}
+#right-navigation a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#members{margin-top: 64px;}
+#members .card{
+    padding: 0px;
+    margin-right:0px;
+    margin-left: auto;
+    /*text-align: right;*/
+}
+.cards-center{
+    overflow-y: auto;
+}
+.cards-right{
+    overflow-y: auto;
+    height:500px;
+
+    background-color: #fff59a;
+}
+.cards-choose{
+    padding: 15px;
+
+    text-align: center;
+    /*background-color: red;*/
+}
+.cards-choose img{
+    margin-bottom: 0px !important;
+    width: 60px !important;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #aaa ;
+    cursor:pointer;
+}
+/*.xiao-popup:hover{cursor:pointer;}*/
+.xiao-work{text-align:center;}
+.xiao-work-card{margin: 0px auto !important;margin-bottom: 30px !important;}
+.xiao-foot{
+	padding-top: 50px !important;
+}
