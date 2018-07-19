@@ -92,7 +92,6 @@ export const appRouter = [
         icon: 'earth',
         title: {i18n: 'international'},
         name: 'international',
-        access: 0,
         component: Main,
         children: [
             { path: 'index', title: {i18n: 'international'}, name: 'international_index', component: resolve => { require(['@/views/international/international.vue'], resolve); } }
