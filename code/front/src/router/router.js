@@ -154,13 +154,7 @@ export const appRouter = [
                 title: '数字渐变',
                 component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
             }
-            // {
-            //     path: 'clipboard-page',
-            //     icon: 'clipboard',
-            //     name: 'clipboard-page',
-            //     title: '一键复制',
-            //     component: resolve => { require(['@/views/my-components/clipboard/clipboard.vue'], resolve); }
-            // }
+
         ]
     },
     {
@@ -175,18 +169,6 @@ export const appRouter = [
 
         ]
     },
-    // {
-    //     path: '/charts',
-    //     icon: 'ios-analytics',
-    //     name: 'charts',
-    //     title: '图表',
-    //     component: Main,
-    //     children: [
-    //         { path: 'pie', title: '饼状图', name: 'pie', icon: 'ios-pie', component: resolve => { require('@/views/access/access.vue') },
-    //         { path: 'histogram', title: '柱状图', name: 'histogram', icon: 'stats-bars', component: resolve => { require('@/views/access/access.vue') }
-
-    //     ]
-    // },
     {
         path: '/tables',
         icon: 'ios-grid-view',
