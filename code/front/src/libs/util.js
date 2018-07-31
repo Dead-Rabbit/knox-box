@@ -12,15 +12,40 @@ util.title = function (title) {
 };
 
 const ajaxUrl = env === 'development'
-    ? 'http://127.0.0.1:8888'
+    ? 'http://localhost:8888'
     : env === 'production'
         ? 'https://www.url.com'
         : 'https://debug.url.com';
 
 util.ajax = axios.create({
     baseURL: ajaxUrl,
-    timeout: 30000
+    timeout: 30000,
+    withCredentials: true
 });
+
+// 自定义ajax
+util.ajax_post = function(url, params, response, that) {
+    this.ajax({
+        method: 'POST',
+        url: url,
+        data: params,
+        params: params,
+        transformRequest: [function (data) {
+            let ret = ''
+            for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+        }],
+        headers:{'Content-Type': "application/x-www-form-urlencoded"}
+    }).then(function (res) {
+        // console.log(res.data, "-IN*RESPONSE-")
+        response(res.data, that);
+    }).catch(function (err) {
+        // response(err)
+        // console.log(err)
+    })
+}
 
 util.inOf = function (arr, targetArr) {
     let res = true;
