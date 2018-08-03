@@ -7,7 +7,6 @@
     "init": "webpack --progress --config build/webpack.dev.config.js",
     "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --config build/webpack.dev.config.js --port=80",
     "build": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
-    "run": "rm -rf dist && NODE_ENV=production webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "lint": "eslint --fix --ext .js,.vue src",
     "test": "npm run lint"
   },
