@@ -14,8 +14,8 @@ util.title = function (title) {
 const ajaxUrl = env === 'development'
     ? 'http://localhost:8888'
     : env === 'production'
-        ? 'https://www.url.com'
-        : 'https://debug.url.com';
+        ? 'http://www.upcknox.com'
+        : 'http://www.upcknox.com';
 
 util.ajax = axios.create({
     baseURL: ajaxUrl,
@@ -24,28 +24,28 @@ util.ajax = axios.create({
 });
 
 // 自定义ajax
-util.ajax_post = function(url, params, response, that) {
+util.ajax_post = function (url, params, response, that) {
     this.ajax({
         method: 'POST',
         url: url,
         data: params,
         params: params,
         transformRequest: [function (data) {
-            let ret = ''
+            let ret = '';
             for (let it in data) {
-                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&';
             }
-            return ret
+            return ret;
         }],
-        headers:{'Content-Type': "application/x-www-form-urlencoded"}
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     }).then(function (res) {
         // console.log(res.data, "-IN*RESPONSE-")
         response(res.data, that);
     }).catch(function (err) {
         // response(err)
         // console.log(err)
-    })
-}
+    });
+};
 
 util.inOf = function (arr, targetArr) {
     let res = true;

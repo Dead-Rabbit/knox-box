@@ -18,6 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist/dist')
     },
+    // port: 80,
     module: {
         rules: [
             {
