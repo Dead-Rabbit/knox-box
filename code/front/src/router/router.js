@@ -10,6 +10,15 @@ export const loginRouter = {
     component: resolve => { require(['@/views/login.vue'], resolve); }
 };
 
+export const mainPage = {
+    path: '/main',
+    name: 'main',
+    meta: {
+        title: '糯客作坊'
+    },
+    component: resolve => { require(['@/views-main/main-page/main-page.vue'], resolve); }
+};
+
 export const page404 = {
     path: '/*',
     name: 'error-404',
@@ -209,6 +218,7 @@ export const appRouter = [
 // 所有上面定义的路由都要写在下面的routers里
 export const routers = [
     loginRouter,
+    mainPage,
     otherRouter,
     preview,
     locking,

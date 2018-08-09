@@ -9,6 +9,8 @@ import 'iview/dist/styles/iview.css';
 import VueI18n from 'vue-i18n';
 import util from '@/libs/util';
 import { VirtualScroller } from 'vue-virtual-scroller';
+import './libs/semantic/semantic.min.css';
+import './libs/icon/knox-logo.css';
 
 Vue.use(VueI18n);
 Vue.use(iView);

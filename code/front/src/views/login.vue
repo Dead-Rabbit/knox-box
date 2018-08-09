@@ -39,6 +39,7 @@
 
 <script>
 import Cookies from 'js-cookie';
+import util from '@/libs/util.js'
 export default {
     data () {
         return {
@@ -60,17 +61,27 @@ export default {
         handleSubmit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
-                    Cookies.set('user', this.form.userName);
-                    Cookies.set('password', this.form.password);
-                    this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
-                    if (this.form.userName === 'iview_admin') {
-                        Cookies.set('access', 0);
-                    } else {
-                        Cookies.set('access', 1);
-                    }
-                    this.$router.push({
-                        name: 'home_index'
-                    });
+                    util.ajax_post("/user/login", {
+                            username: this.form.userName,
+                            password: this.form.password
+                        },
+                        function (res, _this) {
+                            if(res.code){
+                                this.$Message.info(res.result);
+                            }else{
+                                Cookies.set('user', _this.form.userName);
+                                _this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
+                                if (_this.form.userName === 'iview_admin') {
+                                    Cookies.set('access', 0);
+                                } else {
+                                    Cookies.set('access', 1);
+                                }
+                                _this.$router.push({
+                                    name: 'home_index'
+                                });
+                            }
+                        }, this
+                    )
                 }
             });
         }

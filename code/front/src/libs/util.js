@@ -7,12 +7,12 @@ let util = {
 
 };
 util.title = function (title) {
-    title = title || 'iView admin';
+    title = title || '糯客作坊';
     window.document.title = title;
 };
 
 const ajaxUrl = env === 'development'
-    ? 'http://localhost:8888'
+    ? 'http://47.96.237.101:7300/mock/5b6bbbc33e132c0670e41adf/upcknox'
     : env === 'production'
         ? 'http://www.upcknox.com'
         : 'http://www.upcknox.com';
