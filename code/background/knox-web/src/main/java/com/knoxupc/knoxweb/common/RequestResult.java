@@ -1,14 +1,20 @@
-package com.knoxupc.common;
 
+package com.knoxupc.knoxweb.common;
+
+/**
+ * Created by wangzixiao on 2018.8.12
+ * 
+ * @param <T>
+ */
 public class RequestResult<T> {
 
-    private boolean	isSuccess;
+    private boolean isSuccess;
 
-    private String	errorCode;
+    private String errorCode;
 
-    private String	errorMsg;
+    private String errorMsg;
 
-    private T		result;
+    private T result;
 
     public RequestResult(T result) {
         this.isSuccess = true;
